@@ -16,4 +16,6 @@ module org.example.maman13 {
     exports DrawApp;
     opens FourInARow to javafx.fxml;
     exports FourInARow;
+    opens Dictionary to javafx.fxml;
+    exports Dictionary;
 }

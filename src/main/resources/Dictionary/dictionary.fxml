@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="650.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dictionary.Controller">
+   <children>
+      <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="650.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="349.0">
+               <children>
+                  <MenuButton mnemonicParsing="false" text="Options">
+                     <items>
+                        <MenuItem fx:id="newEntry" mnemonicParsing="false" onAction="#newEntry" text="New Entry" />
+                        <MenuItem fx:id="removeMode" mnemonicParsing="false" onAction="#removeMode" text="Remove Entry" />
+                        <MenuItem fx:id="updateWord" mnemonicParsing="false" onAction="#updateWord" text="Update Word" />
+                        <MenuItem fx:id="updateMeaning" mnemonicParsing="false" onAction="#updateMeaning" text="Update Definition" />
+                        <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Close" />
+                     </items>
+                     <HBox.margin>
+                        <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <MenuButton mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="about" mnemonicParsing="false" onAction="#helpAbout" text="About" />
+                     </items>
+                     <HBox.margin>
+                        <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" text="Remove" visible="false">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="cancel" mnemonicParsing="false" onAction="#cancel" text="Cancel" visible="false" />
+               </children>
+            </HBox>
+            <TextField fx:id="searchText" alignment="CENTER" onMouseClicked="#searchText" prefHeight="28.0" prefWidth="189.0" text="Search For...">
+               <HBox.margin>
+                  <Insets bottom="3.0" right="15.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="searchButton" alignment="CENTER" mnemonicParsing="false" onAction="#search" prefHeight="28.0" prefWidth="105.0" text="Search">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets bottom="3.0" right="15.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <SplitPane dividerPositions="0.2839506172839506" focusTraversable="false" prefHeight="437.0" prefWidth="650.0">
+         <items>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="76.0" text="Words">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="listView" onMouseClicked="#selectWord" prefHeight="429.0" prefWidth="146.0">
+                     <opaqueInsets>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ListView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="76.0" text="Definition">
+                     <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="meaningBox" editable="false" pickOnBounds="false" prefHeight="434.0" prefWidth="345.0" style="-fx-text-alignment: CENTER" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="DISAPPEAR" />
+                     </cursor>
+                  </TextArea>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+   </children>
+</VBox>
