@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" text="Four in a Row" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FourInARow.fiarController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="newGame" alignment="CENTER" layoutX="548.0" layoutY="510.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#newTable" prefHeight="57.0" prefWidth="104.0" text="NEW GAME" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </Button>
+            <GridPane fx:id="gameGrid" alignment="CENTER" gridLinesVisible="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#mouseClick" prefHeight="510.0" prefWidth="800.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="15.0" prefWidth="114.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="15.0" prefWidth="114.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="15.0" prefWidth="114.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="10.0" prefWidth="114.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="10.0" prefWidth="114.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="10.0" prefWidth="114.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="30.0" prefWidth="114.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="85.0" valignment="CENTER" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="85.0" valignment="CENTER" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="85.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="85.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="85.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="85.0" vgrow="NEVER" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+               <children>
+                  <Button fx:id="clickOne" mnemonicParsing="false" onAction="#clickOne" prefHeight="151.0" prefWidth="285.0" text="1" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickTwo" mnemonicParsing="false" onAction="#clickTwo" prefHeight="208.0" prefWidth="242.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickThree" mnemonicParsing="false" onAction="#clickThree" prefHeight="100.0" prefWidth="113.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickFour" mnemonicParsing="false" onAction="#clickFour" prefHeight="86.0" prefWidth="132.0" text="4" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickFive" mnemonicParsing="false" onAction="#clickFive" prefHeight="131.0" prefWidth="207.0" text="5" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickSix" mnemonicParsing="false" onAction="#clickSix" prefHeight="91.0" prefWidth="129.0" text="6" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clickSeven" mnemonicParsing="false" onAction="#clickSeven" prefHeight="87.0" prefWidth="133.0" text="7" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <Label layoutX="31.0" layoutY="510.0" prefHeight="57.0" prefWidth="142.0" text="CURRENT TURN:" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Circle fx:id="turnColor" fill="DODGERBLUE" layoutX="207.0" layoutY="539.0" radius="23.0" stroke="BLACK" strokeType="INSIDE" />
+         </children></AnchorPane>
+  </content>
+</TitledPane>
